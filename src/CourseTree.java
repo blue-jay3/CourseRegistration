@@ -1,4 +1,4 @@
-public class CourseTree<T> {
+public class Tree<T> {
     Node<T> root;
 
     public void addNode(int key, T info){
@@ -41,12 +41,16 @@ public class CourseTree<T> {
         }
     }
 
-    public void registerStudent{
+    public void registerStudent(){
+
+    }
+
+    public void registerCourse(){
 
     }
 
     public static void main(String[] args){
-        CourseTree<StudentRegistration> CT = new CourseTree<StudentRegistration>();
+        Tree<StudentRegistration> CT = new Tree<StudentRegistration>();
         Student student1 = new Student("Emma", "F");
         Student student2 = new Student("Adele", "F");
         Student student3 = new Student("Martha", "T");
