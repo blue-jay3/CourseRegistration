@@ -4,9 +4,12 @@ public class Course {
     String prof;
     int id;
 
-    public Course(String prof, int id){
+    String name;
+
+    public Course(String prof, int id, String name){
         this.prof = prof;
         this.id = id;
+        this.name = name;
     }
 }
 

@@ -41,34 +41,24 @@ public class Tree<T> {
         }
     }
 
-    public void registerStudent(){
-
-    }
-
-    public void registerCourse(){
-
-    }
-
     public static void main(String[] args){
+        University UO = new University("University of Ottawa", 100, 10);
         Tree<StudentRegistration> CT = new Tree<StudentRegistration>();
-        Student student1 = new Student("Emma", "F");
-        Student student2 = new Student("Adele", "F");
-        Student student3 = new Student("Martha", "T");
-        Student student4 = new Student("Matthew", "N");
-        Student student5 = new Student("Joe", "A");
-        Course calculus = new MathCourse("Soy-milk", 101);
-        Course discreteMath = new MathCourse("Oat-milk", 102);
-        StudentRegistration studentReg1 = new StudentRegistration(student1.id, calculus,false);
-        StudentRegistration studentReg2 = new StudentRegistration(student2.id, calculus,false);
-        StudentRegistration studentReg3 = new StudentRegistration(student3.id, discreteMath,false);
-        StudentRegistration studentReg4 = new StudentRegistration(student4.id, discreteMath,false);
-        StudentRegistration studentReg5 = new StudentRegistration(student5.id, calculus,false);
 
-        CT.addNode(studentReg1.courseID, studentReg1);
-        CT.addNode(studentReg2.courseID, studentReg2);
-        CT.addNode(studentReg3.courseID, studentReg3);
-        CT.addNode(studentReg4.courseID, studentReg4);
-        CT.addNode(studentReg5.courseID, studentReg5);
+        UO.enrollStudent("Emma", "A");
+        UO.enrollStudent("Adele", "B");
+        UO.enrollStudent("Joe", "C");
+        UO.enrollStudent("Martha", "D");
+        UO.enrollStudent("Matthew", "E");
+
+        UO.registerCourse("Soy-milk", "Math", 101, "Calculus");
+        UO.registerCourse("Oat-milk", "Math", 102, "Discrete Math");
+
+        CT.addNode(101, UO.registerStudent("Emma", 101, false));
+        CT.addNode(102, UO.registerStudent("Adele", 102, false));
+        CT.addNode(101, UO.registerStudent("Joe", 101, false));
+        CT.addNode(102, UO.registerStudent("Martha", 102, false));
+        CT.addNode(101, UO.registerStudent("Martha", 101, false));
 
         CT.inOrderTraversal(CT.root);
     }
