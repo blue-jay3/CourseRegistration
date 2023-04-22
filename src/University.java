@@ -62,7 +62,7 @@ public class University {
             }
         }
 
-        System.out.println(student.firstName + " has been regestered for " + course.name);
+        System.out.println(student.firstName + " has been registered for " + course.name);
         return new StudentRegistration(student, course, auditor);
     }
 
